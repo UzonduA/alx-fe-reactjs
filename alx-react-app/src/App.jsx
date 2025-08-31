@@ -22,7 +22,7 @@ function App() {
         <Footer />
           <div>
             <h2>User Profiles</h2>
-              <UserProfile name="Alice" age={25} bio="I love painting and hiking." />
+              <UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
               <UserProfile name="Bob" age={30} bio="I am learning React at ALX." />
               <UserProfile name="Charlie" age={22} bio="I enjoy playing football." />
 
