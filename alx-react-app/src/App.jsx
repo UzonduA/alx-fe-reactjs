@@ -2,6 +2,7 @@ import WelcomeMessage from './components/WelcomeMessage.jsx'
 import Header from './components/Header.jsx'
 import MainContent from './components/MainContent.jsx'
 import Footer from './components/Footer.jsx'
+import UserProfile from './components/UserProfile.jsx'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -19,6 +20,13 @@ function App() {
         <Header />
         <MainContent />
         <Footer />
+          <div>
+            <h2>User Profiles</h2>
+              <UserProfile name="Alice" age={25} bio="I love painting and hiking." />
+              <UserProfile name="Bob" age={30} bio="I am learning React at ALX." />
+              <UserProfile name="Charlie" age={22} bio="I enjoy playing football." />
+
+          </div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -40,7 +48,7 @@ function App() {
       </p>
       
     </>
-  )
+  );
 }
 
 export default App
