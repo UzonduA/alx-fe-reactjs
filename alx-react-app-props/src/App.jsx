@@ -20,23 +20,22 @@ function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
 
   return (
+  <UserContext.Provider value={userData}>
     <>
       <div>
         <WelcomeMessage />
         <Header />
         <MainContent />
-        <Footer />
-         <UserContext.Provider value={userData}>
         <ProfilePage />
-        </UserContext.Provider>
-        <UserContext.Provider />
-          <div>
+        
+        <div>
             <h2>User Profiles</h2>
               <UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
               <UserProfile name="Bob" age={30} bio="I am learning React at ALX." />
               <UserProfile name="Charlie" age={22} bio="I enjoy playing football." />
 
-          </div>
+        </div>
+
         < a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -56,8 +55,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-     
+     <Footer />
     </>
+  </UserContext.Provider>
   );
 }
 
