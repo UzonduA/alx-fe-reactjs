@@ -17,7 +17,13 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+  const userData = {
+    name: "Jane Doe",
+    email: "jane.doe@example.com",
+    age: 28,
+    bio: "Learning React with ALX!"
+  };
+
 
   return (
   <UserContext.Provider value={userData}>
@@ -27,14 +33,8 @@ function App() {
         <Header />
         <MainContent />
         <ProfilePage />
-        
-        <div>
-            <h2>User Profiles</h2>
-              <UserProfile name="Alice" age={25} bio="Loves hiking and photography" />
-              <UserProfile name="Bob" age={30} bio="I am learning React at ALX." />
-              <UserProfile name="Charlie" age={22} bio="I enjoy playing football." />
+        <UserProfile />
 
-        </div>
 
         < a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
