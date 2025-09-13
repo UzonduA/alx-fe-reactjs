@@ -1,4 +1,4 @@
-import useRecipeStore from '../recipeStore/useRecipeStore';
+import useRecipeStore from '../store/recipeStore';
 
   const RecipeList = () => {
     const recipes = useRecipeStore(state => state.recipes);
