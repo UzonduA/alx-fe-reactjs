@@ -20,13 +20,15 @@ function App() {
         <h1>Recipe Sharing App</h1>
         
         <Routes>
-          <Route path="/" element={<RecipeList />} />
+          <Route path="/" element={
+            <>
+              <SearchBar />
+              <AddRecipeForm />
+              <RecipeList />
+            </>
+          } />
           <Route path="/recipe/:id" element={<RecipeDetailsWrapper />} />
         </Routes>
-      
-        <SearchBar />
-        <RecipeList />
-        <AddRecipeForm />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
