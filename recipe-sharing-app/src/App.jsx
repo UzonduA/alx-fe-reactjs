@@ -6,6 +6,7 @@ import './App.css'
 import RecipeList from './components/RecipeList.jsx'
 import AddRecipeForm from './components/AddRecipeForm'
 import RecipeDetails from './components/RecipeDetails.jsx';
+import SearchBar from './components/SearchBar';
 
 
 function App() {
@@ -13,16 +14,19 @@ function App() {
 
   return (
     <>
-      <RecipeList />
-      <AddRecipeForm />
+
       <Router>
-      <Routes>
+        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '16px' }}>
+        <h1>Recipe Sharing App</h1>
+        
+        <Routes>
           <Route path="/" element={<RecipeList />} />
-
-         <Route path="/recipe/:id" element={<RecipeDetailsWrapper />} />
-      </Routes>
-      </Router>
-
+          <Route path="/recipe/:id" element={<RecipeDetailsWrapper />} />
+        </Routes>
+      
+        <SearchBar />
+        <RecipeList />
+        <AddRecipeForm />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -43,8 +47,11 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      </div>
+      </Router>
     </>
-  )
+  );
+
 }
 import { useParams } from 'react-router-dom';
 const RecipeDetailsWrapper = () => {
