@@ -28,6 +28,8 @@ try {
 
 return (
     <div style={{ maxWidth: 600, margin: '0 auto' }}>
+        <h1 className="text-3xl font-bold text-blue-500">Hello Tailwind</h1>
+
     <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         <input
             type="text"
