@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 0; }
+h1 { margin: 0 0 16px 0 }
+.user-card img { display: block }
+
 a {
   font-weight: 500;
   color: #646cff;

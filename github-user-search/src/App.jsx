@@ -2,12 +2,50 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Search from './components/Search.jsx'
+import UserCard from './components/UserCard'
+import { searchUsers } from './services/github'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [users, setUsers] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  return (
+  async function handleSearch(query) {
+  setLoading(true)
+  setError(null)
+  try {
+  const data = await searchUsers(query)
+  setUsers(data.items || [])
+  } catch (err) {
+  
+  console.error(err)
+  setError(err.response?.data?.message || err.message || 'Request failed')
+  } finally {
+  setLoading(false)
+  }
+}
+
+return (
     <>
+    <div style={{ maxWidth: 980, margin: '40px auto', padding: '0 16px' }}>
+    <h1>GitHub User Search</h1>
+
+    <Search onSearch={handleSearch} />
+
+    {loading && <p>Loading...</p>}
+    {error && <p style={{ color: 'crimson' }}>{error}</p>}
+
+      <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12 }}>
+        {users.map(u => (
+          <UserCard key={u.id} user={u} />
+        ))}
+      </div>
+      
+      {users.length === 0 && !loading && <p style={{ color: '#666', marginTop: 12 }}>No results yet. Try searching for a username.</p>}
+  </div>
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
