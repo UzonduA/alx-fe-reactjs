@@ -13,7 +13,8 @@ try {
 
 export async function fetchAdvancedUsers({ username, location, minRepos, page = 1 }) {
     try {
-        let query = username || ''
+        let query = []
+        if (username) query.push(`${username} in:login`)
         if (location) query += `+location:${location}`
         if (minRepos) query += `+repos:>=${minRepos}`
 
@@ -25,7 +26,7 @@ export async function fetchAdvancedUsers({ username, location, minRepos, page = 
             }
         })
         return res.data
-    } catch (error) {
+    }   catch (error) {
         throw error
     }
 }

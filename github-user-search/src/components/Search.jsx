@@ -5,7 +5,7 @@ export default function Search() {
     const [username, setUsername] = useState('')
     const [location, setLocation] = useState('')
     const [minRepos, setMinRepos] = useState('')
-    const [user, setUser] = useState(null)
+    const [users, setUsers] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
@@ -14,11 +14,11 @@ async function handleSubmit(e) {
     if (!username.trim()) return
     setLoading(true)
     setError(null)
-    setUser(null)
+    setUser([])
 
 try {
-    const data = await fetchUserData(username.trim())
-    setUser(data)
+    const data = await fetchAdvancedUsers(username.trim(), location.trim(), minRepos.trim())
+    setUser(data.items || [])
 } catch (err) {
     setError('Looks like we cant find the user')
 } finally {
@@ -28,7 +28,6 @@ try {
 
 return (
     <div style={{ maxWidth: 600, margin: '0 auto' }}>
-        <h1 className="text-3xl font-bold text-blue-500">Hello Tailwind</h1>
 
     <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         <input
@@ -36,33 +35,59 @@ return (
             placeholder="Enter GitHub username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            className="p-2 border rounded"
+            style={{ flex: 1, padding: '8px 10px' }}
+        />
+        <input
+            type="text"
+            placeholder="Enter location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            className="p-2 border rounded"
+            style={{ flex: 1, padding: '8px 10px' }}
+        />
+        <input
+            type="number"
+            placeholder="Minimum repositories"
+            value={minRepos}
+            onChange={(e) => setMinRepos(e.target.value)}
+            className="p-2 border rounded"
             style={{ flex: 1, padding: '8px 10px' }}
         />
         <button type="submit" style={{ padding: '8px 12px' }}>Search</button>
     </form>
 
 
-{loading && <p>Loading...</p>}
-{error && <p style={{ color: 'crimson' }}>{error}</p>}
+    {loading && <p>Loading...</p>}
+    {error && <p style={{ color: 'crimson' }}>{error}</p>}
 
 
-{user && (
-<div style={{ display: 'flex', gap: 16, alignItems: 'center', border: '1px solid #ddd', padding: 16, borderRadius: 8 }}>
-<img
-src={user.avatar_url}
-alt={`${user.login} avatar`}
-width={80}
-height={80}
-style={{ borderRadius: '50%' }}
-/>
-<div>
-<h2 style={{ margin: '0 0 8px' }}>{user.login}</h2>
-<a href={user.html_url} target="_blank" rel="noopener noreferrer">
-Visit Profile
-</a>
-</div>
-</div>
-)}
-</div>
-)
+    {users.length >0 && (
+        <div className="grid gap-4">
+            {users.map((user) => (
+                <div
+                    key={user.id}
+                    className="flex items-center gap-4 border border-gray-300 p-4 rounded-lg shadow-sm"
+                    >
+                    <img
+                        src={users.avatar_url}
+                        alt={`${users.login} avatar`}
+                        width={80}
+                        height={80}
+                        style={{ borderRadius: '50%' }}
+                    />
+                    <div>
+                        <h2 className="text-lg font-semibold">{user.login}</h2>
+                        <a href={user.html_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                    
+                        Visit Profile
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+    )}
+    </div>
+    )
+
 }
