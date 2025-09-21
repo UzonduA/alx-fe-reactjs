@@ -18,7 +18,7 @@ export async function fetchAdvancedUsers({ username, location, minRepos, page = 
         if (location) query += `+location:${location}`
         if (minRepos) query += `+repos:>=${minRepos}`
 
-        const res = await axios.get('https://api.github.com/search/users', {
+        const res = await axios.get("https://api.github.com/search/users?q", {
             params: {
                 q: query,
                 per_page: 20,
