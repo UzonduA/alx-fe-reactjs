@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://www.bing.com/th/id/OIP.dchqjONJhrMllqIkMeIZbwHaLH?w=157&h=211&c=8&rs=1&qlt=90&o=6&cb=12&dpr=1.5&pid=3.1&rm=2"
+  },
+
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://realfood.tesco.com/media/images/TESCO-Q4-JanuaryStills-10446-TikkaMasalaStyleBeans-1400x919--a490095e-adaa-458e-971d-824536382d73-0-1400x919.jpg"
+  },
+
+  {
+    "id": 3,
+    "title": "Beans Curry",
+    "summary": "This hearty, fibre-packed bean curry is a twist on the classic curry that delivers all the same satisfaction.",
+    "image": "https://realfood.tesco.com/media/images/1400x919-Bean-curry-recipe-deca84ed-13a5-4c27-9c80-788d4aa93e83-0-1400x919.jpg"
+  },
+
+  {
+    "id": 4,
+    "title": "Cauliflower and spinach curry",
+    "summary": "Need inspiration for a Meat-Free Monday meal? Make this cauliflower and spinach curry for a quick vegetarian dinner – using frozen veg means it comes together in no time for an easy midweek meal.",
+    "image": "https://realfood.tesco.com/media/images/1400x919-CauliflowerSpinachCurry-d6bf5748-6d7f-402f-96df-53ad36d0802d-0-1400x919.jpg"
+  },
+
+  {
+    "id": 5,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150"
+  },
+
+  {
+    "id": 6,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/150"
+  },
+
+  {
+    "id": 7,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150"
+  },
+
+  {
+    "id": 8,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/150"
+  },
+
+  {
+    "id": 9,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150"
+  },
+
+  {
+    "id": 10,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/150"
+  }
+]
