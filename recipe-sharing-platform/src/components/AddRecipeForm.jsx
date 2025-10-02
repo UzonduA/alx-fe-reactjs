@@ -6,9 +6,7 @@ const AddRecipeForm = () => {
   const [instructions, setInstructions] = useState('');
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const validate = () => {
     const validationErrors = {};
 
     if (!title.trim()) validationErrors.title = 'Title is required.';
@@ -19,6 +17,11 @@ const AddRecipeForm = () => {
     }
     if (!instructions.trim()) validationErrors.instructions = 'Preparation steps are required.';
 
+    }
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+    const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
