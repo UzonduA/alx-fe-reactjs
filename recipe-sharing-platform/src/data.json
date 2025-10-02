@@ -3,14 +3,47 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://www.bing.com/th/id/OIP.dchqjONJhrMllqIkMeIZbwHaLH?w=157&h=211&c=8&rs=1&qlt=90&o=6&cb=12&dpr=1.5&pid=3.1&rm=2"
+    "image": "https://www.bing.com/th/id/OIP.dchqjONJhrMllqIkMeIZbwHaLH?w=157&h=211&c=8&rs=1&qlt=90&o=6&cb=12&dpr=1.5&pid=3.1&rm=2",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta",
+      "2 large eggs",
+      "50g Parmesan cheese",
+      "Freshly ground black pepper",
+      "Salt"
+    ],
+    "instructions": [
+      "Boil the spaghetti in salted water until al dente.",
+      "Fry the pancetta until crispy.",
+      "Beat the eggs in a bowl, then mix in the grated Parmesan.",
+      "Drain the spaghetti and quickly mix with the egg-cheese mixture and pancetta.",
+      "Serve with black pepper on top."
+    ]
   },
+  
 
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://realfood.tesco.com/media/images/TESCO-Q4-JanuaryStills-10446-TikkaMasalaStyleBeans-1400x919--a490095e-adaa-458e-971d-824536382d73-0-1400x919.jpg"
+    "image": "https://realfood.tesco.com/media/images/TESCO-Q4-JanuaryStills-10446-TikkaMasalaStyleBeans-1400x919--a490095e-adaa-458e-971d-824536382d73-0-1400x919.jpg",
+    "ingredients": [
+      "500g boneless chicken",
+      "1 cup yogurt",
+      "2 tsp garam masala",
+      "1 tsp turmeric",
+      "2 tsp cumin",
+      "1 onion",
+      "2 cups tomato puree",
+      "1/2 cup cream"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices for at least 1 hour.",
+      "Grill or pan-fry the chicken until cooked through.",
+      "In a pan, sauté onions, add tomato puree and simmer.",
+      "Add grilled chicken and cream. Cook for 10 minutes.",
+      "Serve with rice or naan."
+    ]
   },
 
   {
