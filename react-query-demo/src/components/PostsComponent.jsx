@@ -20,7 +20,11 @@ function PostsComponent() {
   } = useQuery({
     queryKey: ['posts'], 
     queryFn: fetchPosts,
-    staleTime: 1000 * 60 * 5,
+    
+    cacheTime: 1000 * 60 * 10,
+    staleTime: 1000 * 60 * 5, 
+    refetchOnWindowFocus: true,
+    keepPreviousData: true,
   });
 
   if (isLoading) return <p>Loading posts...</p>;
@@ -29,6 +33,7 @@ function PostsComponent() {
   return (
     <div>
       <h2>Posts</h2>
+      
       <button onClick={() => refetch()} disabled={isFetching}>
         {isFetching ? 'Refreshing...' : 'Refetch Posts'}
       </button>
