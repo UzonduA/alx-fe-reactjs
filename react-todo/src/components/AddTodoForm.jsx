@@ -9,8 +9,10 @@ function AddTodoForm({ newTodo, setNewTodo, onAdd }) {
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
         aria-label="todo-input"
+        data-testid="todo-input"
       />
-      <button type="submit">Add</button>
+      <button type="submit"
+      data-testid="add-button">Add</button>
     </form>
   );
 }
